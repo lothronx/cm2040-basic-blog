@@ -1,0 +1,68 @@
+<!------------------------- START OF MY CODE ------------------------->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+    <title><%= article.title %></title>
+  </head>
+  <body class="font-mono">
+    <!-- the link to the home page -->
+    <header class="relative">
+      <a
+        href="../"
+        class="absolute top-10 right-10 border border-green-700 bg-white text-green-700 rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-green-50 focus:outline-none focus:shadow-outline"
+        >HOME</a
+      >
+    </header>
+
+    <main class="md:mx-40">
+      <!-- the article section -->
+      <section class="py-16 grid grid-cols-1">
+        <!-- title -->
+        <h1 class="text-3xl font-bold text-green-900"><%= article.title %></h1>
+        <!-- publish date -->
+        <time class="text-gray-500 text-sm pt-2"><%= article.published_at%></time>
+        <!-- subtitle -->
+        <p class="pt-5"><%= article.subtitle %></p>
+        <!-- content -->
+        <article class="py-10"><%= article.content %></article>
+        <!-- like button -->
+        <form action="/articles/<%= article.id %>/likes" method="POST" class="justify-self-end">
+          <button
+            type="submit"
+            class="border border-red-600 bg-white text-red-600 rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-red-50 focus:outline-none focus:shadow-outline"
+          >
+            <%= article.likes %> likes
+          </button>
+        </form>
+      </section>
+
+      <!-- the comments section -->
+      <section>
+        <h2 class="text-lg font-medium">Comments</h2>
+        <!-- the form to submit new comment -->
+        <form action="" method="post" class="grid grid-cols-1">
+          <textarea name="content" id="content" class="form-textarea rounded"></textarea>
+          <input
+            type="submit"
+            value="Submit"
+            class="justify-self-end border border-green-700 bg-green-700 text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-green-800 focus:outline-none focus:shadow-outline"
+          />
+        </form>
+        <!-- the list of existing comments -->
+        <ul>
+          <% comments.forEach((comment) => { %>
+          <li class="pt-7 pb-2 grid grid-cols-1 border-b border-dashed border-b-gray-500">
+            <article><%= comment.content %></article>
+          </li>
+          <% }) %>
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>
+
+<!------------------------- END OF MY CODE ------------------------->

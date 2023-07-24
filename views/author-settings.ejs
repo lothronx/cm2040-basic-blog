@@ -1,0 +1,47 @@
+<!------------------------- START OF MY CODE ------------------------->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+    <title>Blog Settings - Admin Panel</title>
+  </head>
+  <body class="font-mono">
+    <!-- the link points to the Author - Home Page -->
+    <header class="relative">
+      <h2>
+        <a
+          href="."
+          class="absolute top-10 right-10 border border-green-700 bg-white text-green-700 rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-green-50 focus:outline-none focus:shadow-outline"
+          >Back to Admin Panel</a
+        >
+      </h2>
+    </header>
+
+    <!-- the form to update the blog information -->
+    <main class="md:mx-40">
+      <h1 class="pt-24 pb-8 text-3xl font-bold text-green-900">Settings</h1>
+      <form action="" method="post" class="grid grid-cols-1">
+        <!-- title -->
+        <label for="title">Blog Title</label>
+        <input type="text" name="title" id="title" value="<%= blog.title %>" />
+        <!-- author -->
+        <label for="author" class="pt-5">Author</label>
+        <input type="text" name="author" id="author" value="<%= blog.author %>" />
+        <!-- subtitle -->
+        <label for="subtitle" class="pt-5">Blog Subtitle</label>
+        <textarea name="subtitle" id="subtitle" rows="10"><%= blog.subtitle %></textarea>
+        <!-- submit button -->
+        <input
+          type="submit"
+          value="Save"
+          class="mt-5 place-self-center border border-green-700 bg-green-700 text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-green-800 focus:outline-none focus:shadow-outline"
+        />
+      </form>
+    </main>
+  </body>
+</html>
+
+<!------------------------- END OF MY CODE ------------------------->
