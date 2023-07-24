@@ -1,5 +1,8 @@
+node_modules
+database.db
+.env
 report.html
 report.md
 Screenshot 2023-07-24 at 03.52.54.png
 Screenshot 2023-07-24 at 03.53.06.png
-node_modules
+
